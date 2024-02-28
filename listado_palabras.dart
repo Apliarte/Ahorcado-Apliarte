@@ -142,7 +142,7 @@ List<String> listadoPalabras = [
   'shampoo',
   'cepillo',
   'dientes',
-  'pasta ',
+  'pasta',
   'dental',
   'escoba',
   'recogedor',

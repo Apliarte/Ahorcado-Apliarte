@@ -44,6 +44,7 @@ juegoAhorcado() {
   });
   do {
     print('''
+
 Elige una letra del abcedario
 y pulsa Enter
 ''');
@@ -51,21 +52,20 @@ y pulsa Enter
 
     if (letra.length > 1) {
       print('''
-Escribe solo una letra''');
+
+***Escribe solo una letra''');
     }
     if (letra == '') {
       print('''
-Escribe algo...''');
+
+***Escribe algo...''');
     }
     if (!letrasElegidas.contains(letra)) {
       letrasElegidas.add(letra);
     } else if (letrasElegidas.contains(letra)) {
-      print('''Esa 
-        
-        letra ya
-        
+      print('''
+***Esa letra ya
          se ha 
-         
          elegido''');
     }
     intentos++;
@@ -77,28 +77,29 @@ Escribe algo...''');
 
     if (int.tryParse(letra) != null) {
       print('''
-NOOOOOOO 
+***NOOOOOOO 
      eso es  un   
            NUMEROOOOO ''');
     }
-    print('''estas son las letras elegidas ${letrasElegidas}
+    print('''
+---estas son las letras elegidas ${letrasElegidas}
      y tienes ${10 - intentos} intentos de 10
 ${ahorcado[intentos]}''');
     print(adivinaPalabra);
   } while (intentos < 10 && adivinaPalabra.join().toString() != palabra);
-  if (intentos >= 10) {
+
+  if (adivinaPalabra.join().toString() == palabra) {
+    print('''
+*****FELICIDADES HAS GANADO UNA CAJA GAMBAS
+OEEEEE
+OEEEEE
+OEEEE
+OOOOOOOOOOEEEEEEEE era $palabra
+''');
+  } else if (intentos >= 10) {
     print('''
 NOOOOOOO 
      HAS  
            MUERTOOOOOOOO era $palabra''');
-  }
-  if (adivinaPalabra.join().toString() == palabra) {
-    print('''
-FELICIDADES HAS GANADO UNA CAJA GAMBAS
-OEEEEE
-OEEEEE
-OEEEE
-OOOOOOOOOOEEEEEEEE
-''');
   }
 }
